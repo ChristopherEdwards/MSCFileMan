@@ -1,5 +1,5 @@
 DINIT21 ;SFISC/GFT-INITIALIZE VA FILEMAN ; 08MAR2013
- ;;22.2;MSC Fileman;;Jan 05, 2015;
+ ;;22.2;VA FileMan;**1**;Jan 05, 2015;
  ;;Submitted to OSEHRA 5 January 2015 by the VISTA Expertise Network.
  ;;Based on Medsphere Systems Corporation's MSC Fileman 1051.
  ;;Licensed under the terms of the Apache License, Version 2.0.
@@ -85,7 +85,7 @@ DD S DINITOSX=1 F I=1:1 S X=$T(DD+I),Y=$P(X," ",3,99) Q:X?.P  S D="^DD(""OS"","_
  ;;18,"TRMON" U $I:("":"+I+T")
  ;;18,"TRMRD" S Y=$A($ZB),Y=$S(Y<32:Y,Y=127:Y,1:0)
  ;;18,"TYPE-AHEAD" U $I:("":"-F":$C(13,27))
- ;;18,"UCICHECK" X "N % S %=$P(X,"","",1),Y=0 I $ZU(90,10,%) S Y=%"
+ ;;18,"UCICHECK" X "N % S %=$P(X,"","",1),Y=0 I ##CLASS(%SYS.Namespace).Exists(%) S Y=%"
  ;;18,"XY" S $Y=IOY,$X=IOX
  ;;18,"ZS" ZR  X "S %Y=0 F  S %Y=$O(^UTILITY($J,0,%Y)) Q:%Y=""""  Q:'$D(^(%Y))  ZI ^(%Y)" ZS @X
  ;;19,0 GT.M(UNIX)^^250^15000^^1^250

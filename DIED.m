@@ -1,5 +1,5 @@
 DIED ;SFISC/GFT,XAK-MAJOR INPUT PROCESSOR ;3FEB2006
- ;;22.2;MSC Fileman;;Jan 05, 2015;
+ ;;22.2;VA FileMan;**1**;Jan 05, 2015;
  ;;Submitted to OSEHRA 5 January 2015 by the VISTA Expertise Network.
  ;;Based on Medsphere Systems Corporation's MSC Fileman 1051.
  ;;Licensed under the terms of the Apache License, Version 2.0.
@@ -22,7 +22,8 @@ B S DIFLD=$S($D(DIFLD(DQ)):DIFLD(DQ),1:-1)
 RE ;
  S DIP=$P(DQ(DQ),U,1),DV=$P(DQ(DQ),U,2),DU=$P(DQ(DQ),U,3) G:DV["K"&(DUZ(0)'="@") A G PR:$D(DE(DQ)) D W,TR I $D(DTOUT) K DQ,DG G QY^DIE1
 N I X="" G NKEY:$D(^DD("KEY","F",DP,DIFLD)),A:DV'["R",X:'DV,X:$P(DC,U,2)-DP(0),A
-RD G ^DIE0:X[U,^DIE2:X="@" I X?."?" G A:$D(DB(DQ)),^DIEQ ;MAC-1201-61253
+RD G ^DIE0:X[U I X="@" G:DV'["I"!'DV ^DIE2 D NO^DIE0 G B ;You can't delete an uneditable MULTIPLE
+ I X?."?" G A:$D(DB(DQ)),^DIEQ ;MAC-1201-61253
  I X=" ",DV["d",DV'["P",$D(^DISV(DUZ,"DIE",DIP)) S X=^(DIP) I DV'["D",DV'["S" W "  "_X
 T G M^DIE1:DV,^DIE3:DV["V",P:DV'["S" I X?.ANP D SET I 'DDER G V
  K DDER G X

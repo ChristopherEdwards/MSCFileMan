@@ -90,3 +90,6 @@ FLAG(DIC,DIE,DIARCH) ;
  Q:'DIC  Q:'$D(^DD(DIC,0))
  S $P(^DD(DIC,0,"DI"),U)=DIARCH,$P(^DD(DIC,0,"DI"),U,2)=DIE
  Q
+
+
+

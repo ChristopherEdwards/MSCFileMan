@@ -1,5 +1,5 @@
 %ZOSV ;SFISC/AC - $View commands for Open M for NT.  ;2015-01-02  4:31 PM
- ;;22.2;MSC Fileman;;Jan 05, 2015;
+ ;;22.2;VA FileMan;**1**;Jan 05, 2015;
  ;;Submitted to OSEHRA 5 January 2015 by the VISTA Expertise Network.
  ;;Based on Medsphere Systems Corporation's MSC Fileman 1051.
  ;;Licensed under the terms of the Apache License, Version 2.0.
@@ -19,7 +19,7 @@ UCI ;Current UCI
  ;
 UCICHECK(X) ;Check if valid UCI
  N Y,%
- S %=$P(X,",",1),Y=0 I $ZU(90,10,%) S Y=%
+ S %=$P(X,",",1),Y=0 I ##CLASS(%SYS.Namespace).Exists(%) S Y=%
  Q Y
 JOBPAR ;See if X points to a valid Job. Return its UCI.
  N ZJ S Y="",$ZT="JOBX"
